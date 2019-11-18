@@ -118,6 +118,9 @@
     <Reference Include="Topshelf, Version=4.2.1.215, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
       <HintPath>..\packages\Topshelf.4.2.1\lib\net452\Topshelf.dll</HintPath>
     </Reference>
+    <Reference Include="Topshelf.Serilog, Version=4.2.1.215, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Topshelf.Serilog.4.2.1\lib\net452\Topshelf.Serilog.dll</HintPath>
+    </Reference>
     <Reference Include="TopShelf.ServiceInstaller, Version=4.2.1.215, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
       <HintPath>..\packages\TopShelf.ServiceInstaller.4.2.1\lib\netstandard2.0\TopShelf.ServiceInstaller.dll</HintPath>
     </Reference>

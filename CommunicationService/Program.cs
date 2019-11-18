@@ -10,18 +10,21 @@ namespace Jaroszek.ProofOfConcept.CommunicationService
         {
             var host = HostFactory.Run(
                 x =>
-            {
-                //  x.UseSerilog();
+                {
+                    x.DependsOnMsSql();
+                    x.UseSerilog();
 
 
 
-                x.RunAsLocalSystem();
-                x.SetDescription("");
-                x.SetDisplayName("");
-                x.SetServiceName("");
 
 
-            });
+                    x.RunAsLocalSystem();
+                    x.SetDescription("");
+                    x.SetDisplayName("");
+                    x.SetServiceName("");
+
+
+                });
 
             Environment.ExitCode = (int)Convert.ChangeType(host, host.GetTypeCode(), CultureInfo.InvariantCulture);
 
