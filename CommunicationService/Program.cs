@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jaroszek.ProofOfConcept.CommunicationService.Services;
+using System;
 using System.Globalization;
 using Topshelf;
 
@@ -15,13 +16,18 @@ namespace Jaroszek.ProofOfConcept.CommunicationService
                     x.UseSerilog();
 
 
-
+                    x.Service<SqlTableDependencyBacgroundService>(s =>
+                        {
+                            s.ConstructUsing(name => new SqlTableDependencyBacgroundService());
+                            s.WhenStarted(tc => tc.StartService());
+                            s.WhenStopped(tc => tc.StopService());
+                        });
 
 
                     x.RunAsLocalSystem();
-                    x.SetDescription("");
-                    x.SetDisplayName("");
-                    x.SetServiceName("");
+                    x.SetDescription("CommunicationService");
+                    x.SetDisplayName("CommunicationService");
+                    x.SetServiceName("CommunicationService");
 
 
                 });
