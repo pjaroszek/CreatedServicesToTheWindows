@@ -26,8 +26,8 @@ namespace Jaroszek.ProofOfConcept.CommunicationService.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=PAWEL-PC\\SQL2017;Database=Test;User Id=sa;Password=997;MultipleActiveResul" +
-            "tSets=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=PAWEL-PC\\SQL2017;Database=OriGamiIntegrator;User Id=sa;Password=997;Multip" +
+            "leActiveResultSets=True")]
         public string OfficeConnectionString {
             get {
                 return ((string)(this["OfficeConnectionString"]));
