@@ -13,12 +13,10 @@ namespace Jaroszek.ProofOfConcept.CommunicationService
                 x =>
                 {
                     x.DependsOnMsSql();
-                    x.UseSerilog();
+                    x.UseSerilog(SetConfigurationLogger.GetLogger());
 
                     //    x.DependsOn("CommunicationService");
                     //   x.DependsOnEventLog();
-
-
 
 
                     x.Service<SqlTableDependencyBacgroundService>(s =>
@@ -30,9 +28,9 @@ namespace Jaroszek.ProofOfConcept.CommunicationService
 
 
                     x.RunAsLocalSystem();
-                    x.SetDescription("CommunicationService");
-                    x.SetDisplayName("CommunicationService");
-                    x.SetServiceName("CommunicationService");
+                    x.SetDescription("AAa_CommunicationService");
+                    x.SetDisplayName("AAa_CommunicationService");
+                    x.SetServiceName("AAa_CommunicationService");
 
 
                 });
