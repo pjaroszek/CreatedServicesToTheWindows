@@ -15,6 +15,11 @@ namespace Jaroszek.ProofOfConcept.CommunicationService
                     x.DependsOnMsSql();
                     x.UseSerilog();
 
+                    //    x.DependsOn("CommunicationService");
+                    //   x.DependsOnEventLog();
+
+
+
 
                     x.Service<SqlTableDependencyBacgroundService>(s =>
                         {
@@ -37,5 +42,8 @@ namespace Jaroszek.ProofOfConcept.CommunicationService
 
 
         }
+
+
+
     }
 }
