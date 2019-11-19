@@ -1,4 +1,5 @@
 ﻿using Jaroszek.ProofOfConcept.CommunicationService.Services;
+using Serilog;
 using System;
 using System.Globalization;
 using Topshelf;
@@ -9,14 +10,19 @@ namespace Jaroszek.ProofOfConcept.CommunicationService
     {
         static void Main(string[] args)
         {
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.Seq("http://localhost:5341")
+                .CreateLogger();
+
             var host = HostFactory.Run(
                 x =>
                 {
                     x.DependsOnMsSql();
-                    x.UseSerilog(SetConfigurationLogger.GetLogger());
+                    x.UseSerilog();
 
-                    //    x.DependsOn("CommunicationService");
-                    //   x.DependsOnEventLog();
+                    //   x.DependsOn("AAa_CommunicationService");
+                    //  x.DependsOnEventLog();
 
 
                     x.Service<SqlTableDependencyBacgroundService>(s =>
